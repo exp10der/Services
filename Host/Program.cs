@@ -1,7 +1,6 @@
 ﻿namespace Host
 {
     using Endpoint;
-    using Endpoint.Controllers;
     using Topshelf;
 
     internal class Program

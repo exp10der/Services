@@ -1,6 +1,7 @@
 ﻿namespace Host
 {
     using Endpoint;
+    using Endpoint.Controllers;
     using Topshelf;
 
     internal class Program
@@ -9,9 +10,9 @@
         {
             HostFactory.Run(cfg =>
             {
-                cfg.Service<EndpointController>(s =>
+                cfg.Service<RestService>(s =>
                 {
-                    s.ConstructUsing(() => new EndpointController());
+                    s.ConstructUsing(() => new RestService());
                     s.WhenStarted(es => es.Start());
                     s.WhenStopped(es => es.Stop());
                 });

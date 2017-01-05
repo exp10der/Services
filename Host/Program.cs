@@ -9,9 +9,9 @@
         {
             HostFactory.Run(cfg =>
             {
-                cfg.Service<EndpointService>(s =>
+                cfg.Service<EndpointController>(s =>
                 {
-                    s.ConstructUsing(() => new EndpointService());
+                    s.ConstructUsing(() => new EndpointController());
                     s.WhenStarted(es => es.Start());
                     s.WhenStopped(es => es.Stop());
                 });

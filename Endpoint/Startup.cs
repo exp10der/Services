@@ -9,6 +9,7 @@
         {
             var config = new HttpConfiguration();
             config.MapHttpAttributeRoutes();
+            config.DependencyResolver = new StructureMapResolver(IoC.Container);
 
             appBuilder.UseWebApi(config);
         }
